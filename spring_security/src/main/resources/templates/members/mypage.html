@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>My Page([[${username}]]) - <span><a href="/logout">로그아웃</a></span></h1>
+    <hr>
+    username : [[${username}]]
+    <br><br>
+    password : [[${password}]]
+    <br><br>
+    name : [[${name}]]
+    <br><br>
+    role : [[${role}]]
+    <br><br>
+    <hr>
+    principal.username : [[${username}]]
+    <br><br>
+    principal : [[${principal}]]
+</body>
+</html>

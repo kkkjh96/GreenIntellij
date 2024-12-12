@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.com//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spring_security.dao.MemberDao">
+
+    <insert id="regist">
+        INSERT INTO user_241210 (username, password, name, role)
+        VALUES
+        (#{member.username}, #{member.password}, #{member.name}, #{member.role})
+    </insert>
+
+    <select id="findByUsername" resultType="com.example.spring_security.entity.Member">
+        SELECT * FROM user_241210 WHERE username = #{username}
+    </select>
+
+</mapper>

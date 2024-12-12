@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.com//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.security2_241212.dao.MemberDao">
+
+    <insert id="insertMember">
+        INSERT INTO user_241212 (username, password, name, role)
+        VALUES
+            (#{member.username}, #{member.password}, #{member.name}, #{member.role})
+    </insert>
+
+    <select id="findByUsername" resultType="com.example.security2_241212.entity.Member">
+        SELECT * FROM user_241212 WHERE username = #{username}
+    </select>
+
+</mapper>
