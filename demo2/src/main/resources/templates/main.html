@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <hr>
+    <th:block th:if="${session.user == null}">
+        <div>
+            <a th:href="@{/regist}">회원가입</a>
+        </div>
+        <div>
+            <a th:href="@{/sign}">로그인</a>
+        </div>
+    </th:block>
+    <th:block th:if="${session.user != null && session.user.role == 'member'}">
+        <div>
+            <span th:text="${session.user.username} + '님 환영합니다.'"></span>
+        </div>
+        <div>
+            <a th:href="@{/logout}">로그아웃</a>
+        </div>
+    </th:block>
+    <th:block th:if="${session.user != null && session.user.role == 'admin'}">
+        <div>
+            <span th:text="관리자님 환영합니다."></span>
+        </div>
+        <div>
+            <a th:href="@{/logout}">로그아웃</a>
+        </div >
+    </th:block>
+</body>
+</html>
