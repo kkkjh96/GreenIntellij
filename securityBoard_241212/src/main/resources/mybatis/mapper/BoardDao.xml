@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.com//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.securityboard_241212.dao.BoardDao">
+
+    <select id="selectAllBoards" resultType="com.example.securityboard_241212.dto.BoardDto">
+        SELECT * FROM tbl_board ORDER BY bno DESC
+    </select>
+
+    <insert id="insertBoard">
+        INSERT INTO tbl_board (title, content, writer)
+        VALUES
+            (#{board.title}, #{board.content}, #{board.writer})
+    </insert>
+
+    <select id="getBoardByBno" resultType="com.example.securityboard_241212.dto.BoardDto">
+        SELECT * FROM tbl_board WHERE bno = #{bno}
+    </select>
+
+    <update id="updateBoard">
+        UPDATE tbl_board
+        SET content = #{board.content}, title = #{board.title}
+        WHERE bno = #{board.bno}
+    </update>
+
+    <delete id="deleteBoardByBno">
+        DELETE FROM tbl_board WHERE bno = #{bno}
+    </delete>
+
+</mapper>

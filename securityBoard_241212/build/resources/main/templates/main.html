@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>시큐리티 게시판</h1>
+    <hr>
+    <div class="snippet-container">
+        <div>
+            <a th:href="@{/board/list}">게시판 가기</a>
+        </div>
+        <div>
+            <a th:href="@{/login}">로그인</a>
+        </div>
+        <div>
+            <a th:href="@{/regist}">회원가입</a>
+        </div>
+    </div>
+</body>
+</html>
